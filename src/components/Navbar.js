@@ -22,10 +22,22 @@ export default class Navbar extends Component {
         return (
             <nav className="navbar">
                 <div className="nav-center">
-                    <div className="nav-header"></div>
-                    <Link ro="/"/>
-                    <img src={logo} alt="Beach Resort" />
-
+                    <div className="nav-header">
+                    <Link ro="/" >
+                      <img src={logo} alt="Beach Resort" />
+                    </Link>
+                    <button type="button" className="nav-btn" onClick={this.handleToggle} >
+                       <FaAlignRight className="nav-icon" />
+                    </button>
+                    </div>
+                    <ul className={this.state.isOpen?"nav-links show-nav":"nav-links"}>
+                        <li>
+                            <Link to="/">Home</Link>  
+                        </li>
+                        <li>
+                            <Link to="/">Rooms</Link> 
+                        </li>
+                    </ul>
                 </div>
             </nav>
         )
