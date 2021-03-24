@@ -24,12 +24,12 @@ class RoomProvider extends Component {
 
     };
 
-    //getdata 
-
+    // getdata 
     getData = async () => {
         try {
             let response = await Client.getEntries({
-                content_type: "beachResortRoom"
+                content_type: "beachResortRoom", 
+                order: "-fields.price"
             });
             let rooms = this.formatData(response.items);
             let featuredRooms = rooms.filter(room => room.featured === true);
