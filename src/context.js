@@ -60,7 +60,7 @@ class RoomProvider extends Component {
     }
 
     formatData(items) {
-        console.log(items);
+        // console.log(items);
 
         let tempItems = items.map(item => {
             let id = item.sys.id
